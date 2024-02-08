@@ -201,3 +201,154 @@ HTML5的文档类型写法如下：
 块引用元素 `<blockquote>` 是 **块级（block-level）** 元素。 它有一个 **内联（inline）** 版本： `<q>`
 
 <p>他说<q>我是傻逼</q>。</p>
+
+
+
+<form action="#" method="post">
+    <h1>Sign Up</h1>
+    <fieldset>
+        <legend><span class="number">1</span> Your basic info</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name">
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="user_email">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="user_password">
+        <label>Age:</label>
+        <input type="radio" id="under_13" value="under_13" name="user_age">
+        <label for="under_13" class="light">Under 13</label>
+        <input type="radio" id="over_13" value="over_13" name="user_age">
+        <label for="over_13" class="light">Over 13</label>
+    </fieldset>
+    <fieldset>
+        <legend><span class="number">2</span> Your profile</legend>
+        <label for="bio">Biography:</label>
+        <input id="bio" name="user_bio"></input>
+        <label for="job">Job role:</label>
+        <select id="job" name="user_job">
+            <optgroup label="Web">
+                <option value="frontend_developer">Front-End Developer</option>
+                <option value="php_developer">PHP Developer</option>
+                <option value="python_developer">Python Developer</option>
+                <option value="rails_developer">Rails Developer</option>
+                <option value="web_designer">Web Designer</option>
+                <option value="wordpress developer">Wordpress Developer</option>
+            </optgroup>
+            <optgroup label="Mobile">
+                <option value="android_developer">Android Developer</option>
+                <option value="ios_developer">iOS Developer</option>
+                <option value="mobile_designer">Mobile Designer</option>
+            </optgroup>
+            <optgroup label="Business">
+                <option value="business_owner">Business Owner</option>
+                <option value="freelancer">Freelancer</option>
+            </optgroup>
+        </select>
+        <label>Interests:</label>
+        <br>
+        <input type="checkbox" id="development" value="interest_development" name="user_interest">
+        <label for="development">Development</label>
+        <br>
+        <input type="checkbox" id="design" value="interest_design" name="user_interest">
+        <label for="design">Design</label>
+        <br>
+        <input type="checkbox" id="business" value="business" name="user_interest">
+        <label for="business">Business</label>
+    </fieldset>
+    <button type="submit">Sign Up</button>
+</form>
+# CSS 基础
+
+CSS的工作原理是首先**选择**一个HTML元素（如`<p>`，接着选择一个想要修饰的**属性**（比如颜色）， 最后在选择到的元素属性上应用一个具体的**值**（比如red）：
+
+```css
+p{ color: red;}
+```
+
+CSS可以作为一个属性（`style`）内置于HTML元素中：
+
+```html
+<p style="color: red;">This text is red.</p>
+```
+
+CSS可以使用 `<style>` 标签写在HTML文档的头部 `<head>`：
+
+```html
+<html>
+  <head>
+    <title>Hello World</title>
+    <style type="text/css">
+      p{ color: red;}
+    </style>
+  </head>
+  <body>
+    <p>This paragraph will be red.</p>
+  </body>
+</html>
+```
+
+也可以把CSS代码都放在扩展名为 `.css` 的文件中，然后使用 `<link>` 标签添加到HTML文档的头部 `<head>`：
+
+```html
+<html>
+  <head>
+    <title>Hello World</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <p>This paragraph will be red.</p>
+  </body>
+</html>
+```
+
+## 语法规则
+
+- 通用标签（tag）选择器：
+
+  ```css
+  blockquote { background: lightgreen; }
+  ```
+
+- 类（class）选择器：
+
+  ```css
+  .date { color: red; }
+  ```
+
+-  ID 选择器：
+
+  ```css
+  #title { color: orange; }
+  ```
+
+- 复合选择器：
+
+  ```css
+  em.date { color: blue; }
+  ```
+
+- 层级选择器：
+
+  1. 后代选择器
+
+     1.  空格（ ）。div p: 表示p是div的后代元素, div是p的祖先（选择器中的一个**空格（space）** 有特别的含义，定义了一个**从左到右**的祖先/后代层级关系）。该选择器选择所有div下的p后代元素。
+
+     2.  箭头（>）。表示直系关系。div > p 表示div的儿子辈的元素。
+
+     3.  星号（*）。表示隔代关系。div * p表示div的孙子辈及之后的元素。
+  2. 同级选择器
+     1. 加号（+）。表示紧随关系。h1 + h2: 表示紧跟在h1后面的h2元素。
+     2. 波浪号（~）。表示后续关系。h1 ~ h2: 表示和h1元素同在一个父元素下的后续h2元素（中间可以隔着其他元素）。
+  
+- 伪类（Pseudo-class）选择器
+
+  ```css
+  a {
+    color: blue;
+  }
+  
+  a:hover {
+    color: red;
+  }
+  ```
+

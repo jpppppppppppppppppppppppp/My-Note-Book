@@ -108,3 +108,4 @@ R_m=\sum_{k\leq m}{m-k\choose k}(-1)^k&=\sum_{k\leq m}{m-1-k\choose k}(-1)^k + \
 \end{aligned}
 $$
 
+；
